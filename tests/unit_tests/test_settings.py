@@ -1,7 +1,6 @@
 from pathlib import Path
 
 import pytest
-from pydantic import SecretStr
 
 from agent.settings import settings
 
