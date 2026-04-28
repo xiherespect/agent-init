@@ -31,7 +31,7 @@ class State:
     See: https://langchain-ai.github.io/langgraph/concepts/low_level/#state
     """
 
-    changeme: str = "example"
+    query: str = "example"
 
 
 async def call_model(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
@@ -40,8 +40,7 @@ async def call_model(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
     Can use runtime context to alter behavior.
     """
     return {
-        "changeme": "output from call_model. "
-        f"Configured with {(runtime.context or {}).get('my_configurable_param')}"
+        "query": state.query,
     }
 
 
