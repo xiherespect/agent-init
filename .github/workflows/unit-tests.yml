@@ -60,5 +60,11 @@ jobs:
           ZHIPU__API_BASE: https://open.bigmodel.cn/api/paas/v4
           ZHIPU__MODEL: glm-5.1
         run: |
+          if [ -z "$ZHIPU__API_KEY" ]; then
+            echo "ZHIPU__API_KEY is empty"
+            exit 1
+          else
+            echo "ZHIPU__API_KEY is present"
+          fi
           uv pip install pytest
           uv run pytest tests/unit_tests
