@@ -17,16 +17,6 @@ class LLMSettings(BaseModel):
     model: str = ""
 
 
-class ZhipuSettings(LLMSettings):
-    api_base: str = "https://open.bigmodel.cn/api/paas/v4"
-    model: str = "glm-5.1"
-
-
-class DeepSeekSettings(LLMSettings):
-    api_base: str = "https://api.deepseek.com/v1"
-    model: str = "deepseek-v4-pro"
-
-
 class LangSmithSettings(BaseModel):
     api_key: SecretStr = SecretStr("")
     project: str = ""
@@ -41,8 +31,8 @@ class Settings(BaseSettings):
     )
 
     project: ProjectSettings = Field(default_factory=ProjectSettings)
-    zhipu: ZhipuSettings = Field(default_factory=ZhipuSettings)
-    deepseek: DeepSeekSettings = Field(default_factory=DeepSeekSettings)
+    zhipu: LLMSettings = Field(default_factory=LLMSettings)
+    deepseek: LLMSettings = Field(default_factory=LLMSettings)
     qwen: LLMSettings = Field(default_factory=LLMSettings)
     langsmith: LangSmithSettings = Field(default_factory=LangSmithSettings)
 
