@@ -56,7 +56,7 @@ jobs:
           path: src/
       - name: Run tests with pytest
         env:
-          ZHIPU__API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+          ZHIPU__API_KEY: ${{ secrets.ZHIPU__API_KEY }}
           ZHIPU__API_BASE: https://open.bigmodel.cn/api/paas/v4
           ZHIPU__MODEL: glm-5.1
         run: |
