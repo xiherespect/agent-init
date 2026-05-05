@@ -9,6 +9,7 @@ readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = [
+    "langchain>=1.2.15",
     "langchain-community>=0.4.1",
     "langchain-deepseek>=1.0.1",
     "langgraph>=1.0.0",
@@ -34,28 +35,28 @@ packages = ["langgraph.templates.agent", "agent"]
 [tool.setuptools.package-data]
 "*" = ["py.typed"]
 
-[tool.ruff]
-lint.select = [
-    "E",    # pycodestyle
-    "F",    # pyflakes
-    "I",    # isort
-    "D401", # First line should be in imperative mood
-    "T201",
-    "UP",
-]
-lint.ignore = [
-    "UP006",
-    "UP007",
-    # We actually do want to import from typing_extensions
-    "UP035",
-    # Relax the convention by _not_ requiring documentation for every function parameter.
-    "D417",
-    "E501",
-]
-[tool.ruff.lint.per-file-ignores]
-"tests/*" = ["D", "UP"]
-[tool.ruff.lint.pydocstyle]
-convention = "google"
+# [tool.ruff]
+# lint.select = [
+#     "E",    # pycodestyle
+#     "F",    # pyflakes
+#     "I",    # isort
+#     "D401", # First line should be in imperative mood
+#     "T201",
+#     "UP",
+# ]
+# lint.ignore = [
+#     "UP006",
+#     "UP007",
+#     # We actually do want to import from typing_extensions
+#     "UP035",
+#     # Relax the convention by _not_ requiring documentation for every function parameter.
+#     "D417",
+#     "E501",
+# ]
+# [tool.ruff.lint.per-file-ignores]
+# "tests/*" = ["D", "UP"]
+# [tool.ruff.lint.pydocstyle]
+# convention = "google"
 
 [dependency-groups]
 dev = [
